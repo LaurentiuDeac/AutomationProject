@@ -1,5 +1,6 @@
 package tests;
 
+import base.BaseTest;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -9,13 +10,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.sql.Driver;
 
-public class LoghinTest {
+public class LoghinTest extends BaseTest {
 
-    public WebDriver Driver;
+
 
     @Test
+
     public void metodaLogin(){
-        // Setam driverul de chrome
+       /* // Setam driverul de chrome
         System.setProperty("webdriver.chrome.driver", "C:\\Automation\\chromedriver.exe");
 
         // Deschidem un browser chrome
@@ -26,7 +28,7 @@ public class LoghinTest {
         Driver.get("http://demo.automationtesting.in/Index.html");
 
         //maximaze
-        Driver.manage().window().maximize();
+        Driver.manage().window().maximize();*/
 
         //Identificam butonul "Sign In" ID CLASS LINK VALUE XPATH CSS
         WebElement signInElement = Driver.findElement(By.id("btn1"));
@@ -52,7 +54,8 @@ public class LoghinTest {
 
         String expectedPage="SingIn";
         String actualPage=Driver.getTitle();
-        Assert.assertEquals("The expected page was not displayed",expectedPage, actualPage); //polimorfism static
+        Assert.assertEquals("The expected page was not displayed",expectedPage, actualPage);
+        //polimorfism static
 
         // validam mesJ DE eroare
 

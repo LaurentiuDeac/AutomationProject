@@ -1,5 +1,6 @@
 package tests;
 
+import base.BaseTest;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.*;
@@ -9,15 +10,11 @@ import org.openqa.selenium.support.ui.Select;
 import java.sql.Driver;
 import java.util.List;
 
-public class RegisterTest {
-    public WebDriver Driver;
+public class RegisterTest extends BaseTest {
+
 
     @Test
     public void registerTest(){
-        System.setProperty("webdriver.chrome.driver", "C:\\Automation\\chromedriver.exe");
-        Driver = new ChromeDriver();
-        Driver.get("http://demo.automationtesting.in/Index.html");
-        Driver.manage().window().maximize();
 
         WebElement skipSignInElement = Driver.findElement(By.id("btn2"));
         skipSignInElement.click();
