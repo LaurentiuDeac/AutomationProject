@@ -16,15 +16,12 @@ public class BaseTest {
         Driver.get("http://demo.automationtesting.in/Index.html");
         Driver.manage().window().maximize();
 
-
     }
-
-    @After
+   /* @After
     public void cleaner(){
         Driver.quit();
 
-    }
-
+    }*/
 
 }
 
