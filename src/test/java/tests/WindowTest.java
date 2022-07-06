@@ -4,27 +4,26 @@ import Pages.IndexPage;
 import Pages.RegisterPage;
 import Pages.WindowPage;
 import base.BaseTest;
+import base.Hooks;
 import org.junit.Test;
 
-public class WindowTest extends BaseTest {
-    public WindowTest() {
-    }
-
-
+public class WindowTest extends Hooks {
 
     @Test
     public void windowTest() {
         IndexPage indexPage = new IndexPage(this.getDriver());
         indexPage.clickSkipSignIn();
+
+
         RegisterPage registerPage = new RegisterPage(this.getDriver());
         registerPage.goToWindowPage();
+
         WindowPage windowPage = new WindowPage(this.getDriver());
         windowPage.dealWithTab(1);
         windowPage.dealWithWindow(1);
         windowPage.dealWithMultipleTab(2);
     }
 }
-
 
 
 

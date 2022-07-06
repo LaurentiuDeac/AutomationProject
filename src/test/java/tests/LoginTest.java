@@ -3,9 +3,10 @@ package tests;
 import Pages.IndexPage;
 import Pages.LoginPage;
 import base.BaseTest;
+import base.Hooks;
 import org.junit.Test;
 
-public class LoginTest extends BaseTest {
+public class LoginTest extends Hooks {
     public LoginTest() {
     }
 
@@ -14,7 +15,7 @@ public class LoginTest extends BaseTest {
         IndexPage indexPage = new IndexPage(this.getDriver());
         indexPage.clickSignIn();
         LoginPage loginPage = new LoginPage(this.getDriver());
-        loginPage.loginInvalidProcess("SignIn", "email@proba.com", "Proba123#", "Invalid User Name or PassWord");
+        loginPage.loginInvalidProcess(testData);
     }
 }
 

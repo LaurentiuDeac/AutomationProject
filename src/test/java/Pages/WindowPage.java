@@ -9,6 +9,12 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 public class WindowPage extends BasePage {
+
+
+    public WindowPage(WebDriver driver) {
+        super(driver);
+    }
+
     @FindBy(css = ".analystic")
     private List<WebElement> windowsButtons;
     @FindBy(css = "#Tabbed>a>button")
@@ -18,34 +24,31 @@ public class WindowPage extends BasePage {
     @FindBy(css = "#Multiple>button")
     private WebElement clickTabsElement;
 
-    public WindowPage(WebDriver driver) {
-        super(driver);
+
+    public void dealWithTab(Integer tab){
+        elementMethods.clickElement(windowsButtons.get(0));
+        elementMethods.clickElement(clickTabElement);
+        tabMethods.switchSpecificTabWindow(tab);
+        tabMethods.closeCurrentTabWindow();
+        tabMethods.switchSpecificTabWindow(tab-1);
     }
 
-    public void dealWithTab(Integer tab) {
-        this.elementMethods.clickElement((WebElement)this.windowsButtons.get(0));
-        this.elementMethods.clickElement(this.clickTabElement);
-        this.tabMethods.switchSpecificTabWindow(tab);
-        this.tabMethods.closeCurrentTabWindow();
-        this.tabMethods.switchSpecificTabWindow(tab - 1);
+    public void dealWithWindow(Integer window){
+        elementMethods.clickElement(windowsButtons.get(1));
+        elementMethods.clickElement(clickWindowElement);
+        tabMethods.switchSpecificTabWindow(window);
+        tabMethods.closeCurrentTabWindow();
+        tabMethods.switchSpecificTabWindow(window-1);
     }
 
-    public void dealWithWindow(Integer window) {
-        this.elementMethods.clickElement((WebElement)this.windowsButtons.get(1));
-        this.elementMethods.clickElement(this.clickWindowElement);
-        this.tabMethods.switchSpecificTabWindow(window);
-        this.tabMethods.closeCurrentTabWindow();
-        this.tabMethods.switchSpecificTabWindow(window - 1);
-    }
+    public void dealWithMultipleTab(Integer tabs){
 
-    public void dealWithMultipleTab(Integer tabs) {
-        this.elementMethods.clickElement((WebElement)this.windowsButtons.get(2));
-        this.elementMethods.clickElement(this.clickTabsElement);
-        this.tabMethods.switchSpecificTabWindow(tabs);
-        this.tabMethods.closeCurrentTabWindow();
-        this.tabMethods.switchSpecificTabWindow(tabs - 1);
-        this.tabMethods.closeCurrentTabWindow();
-        this.tabMethods.switchSpecificTabWindow(tabs - 2);
+        elementMethods.clickElement(windowsButtons.get(2));
+        elementMethods.clickElement(clickTabsElement);
+        tabMethods.switchSpecificTabWindow(tabs);
+        tabMethods.closeCurrentTabWindow();
+        tabMethods.switchSpecificTabWindow(tabs-1);
+        tabMethods.closeCurrentTabWindow();
+        tabMethods.switchSpecificTabWindow(tabs-2);
     }
 }
-

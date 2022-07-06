@@ -4,16 +4,16 @@ import Pages.AlertPage;
 import Pages.IndexPage;
 import Pages.RegisterPage;
 import base.BaseTest;
+import base.Hooks;
 import org.junit.Test;
 
-public class AlertTest extends BaseTest {
-    public AlertTest() {
-    }
+public class AlertTest extends Hooks {
 
     @Test
     public void registerTest() {
         IndexPage indexPage = new IndexPage(this.getDriver());
         indexPage.clickSkipSignIn();
+
         RegisterPage registerPage = new RegisterPage(this.getDriver());
         registerPage.goToAlertPage();
         AlertPage alertPage = new AlertPage(this.getDriver());

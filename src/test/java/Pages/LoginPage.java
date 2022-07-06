@@ -7,7 +7,20 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage extends BasePage {
+import java.util.HashMap;
+
+public class LoginPage {
+
+    public WebDriver driver;
+    public ElementMethods elementMethods;
+    public PageMethods pageMethods;
+
+    public LoginPage(WebDriver driver){
+        this.driver = driver;
+        elementMethods = new ElementMethods(this.driver);
+        pageMethods = new PageMethods(this.driver);
+        PageFactory.initElements(driver, this);
+    }
 
     @FindBy(xpath = "//input[@placeholder='E mail']")
     private WebElement emailElement;
@@ -18,16 +31,11 @@ public class LoginPage extends BasePage {
     @FindBy(id = "errormsg")
     private WebElement errorMessageElement;
 
-    public LoginPage(WebDriver driver) {
-        super(driver);
-    }
-
-
-    public void loginInvalidProcess(String page, String email, String password, String error) {
-        pageMethods.validateTitlePage(page);
-        elementMethods.fillElement(emailElement, email);
-        elementMethods.fillElement(passwordElement, password);
+    public void loginInvalidProcess(HashMap<String, String> values){
+        pageMethods.validateTitlePage(values.get("loginPage"));
+        elementMethods.fillElement(emailElement,values.get("email"));
+        elementMethods.fillElement(passwordElement, values.get("password"));
         elementMethods.clickElement(enterElement);
-        elementMethods.validateElementText(errorMessageElement, error);
+        elementMethods.validateElementText(errorMessageElement, values.get("errorMessage"));
     }
 }

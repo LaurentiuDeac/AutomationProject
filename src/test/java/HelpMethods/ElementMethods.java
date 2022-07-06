@@ -13,27 +13,25 @@ public class ElementMethods {
 
     public ElementMethods(WebDriver driver) {
         Driver = driver;
+
     }
-
-
     public void clickElement(WebElement element){
         element.click();
     }
 
+
     public void fillElement(WebElement  element, String value){
         element.sendKeys(value);
+
     }
 
-
-    public void selectValueElement (WebElement element , String value){
+    public void selectValueElement (WebElement element, String value){
         Select DropDown =new Select((element));
         DropDown.selectByValue(value);
     }
-
     public void selectTextElement(WebElement element, String value){
         Select dropDown =new Select(element);
         dropDown.selectByVisibleText(value);
-
     }
 
     public void hoverElement(WebElement element){
@@ -41,14 +39,8 @@ public class ElementMethods {
         action.moveToElement(element).build().perform();
     }
 
-
     public void validateElementText(WebElement element, String value){
         String actualValue=element.getText();
         Assert.assertEquals("Text message is not correct!",value,actualValue);
     }
-
-
-
 }
-
-
