@@ -13,7 +13,7 @@ public class Hooks extends BaseTest {
     public void setUp(){
         initiateDriver();
         String className = this.getClass().getSimpleName();
-        PropertyFile propertyFile = new PropertyFile("LogIn");  // classname ( de ce am folosit classname) fisierul noustru se numeste LoghInData )
+        PropertyFile propertyFile = new PropertyFile(className);
         testData = propertyFile.getAllValues();
 
     }

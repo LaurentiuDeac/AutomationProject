@@ -7,10 +7,11 @@ import base.BaseTest;
 import base.Hooks;
 import org.junit.Test;
 
-public class WindowTest extends Hooks {
+public class WindowTest extends BaseTest {
 
     @Test
     public void windowTest() {
+        super.initiateDriver(); // clasa aceasta nu extinde clasa hooks, driverul nu va fi initializat
         IndexPage indexPage = new IndexPage(this.getDriver());
         indexPage.clickSkipSignIn();
 
@@ -24,6 +25,30 @@ public class WindowTest extends Hooks {
         windowPage.dealWithMultipleTab(2);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

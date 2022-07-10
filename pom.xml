@@ -15,9 +15,6 @@
 
     <dependencies>
 
-
-
-
         <!-- https://mvnrepository.com/artifact/junit/junit -->
         <dependency>
             <groupId>junit</groupId>
@@ -40,10 +37,7 @@
             <scope>test</scope>
         </dependency>
 
-
     </dependencies>
-
-
 
 </project>
 
