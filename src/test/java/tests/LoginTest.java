@@ -2,7 +2,6 @@ package tests;
 
 import Pages.IndexPage;
 import Pages.LoginPage;
-import base.BaseTest;
 import base.Hooks;
 import org.junit.Test;
 
