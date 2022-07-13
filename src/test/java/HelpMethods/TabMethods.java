@@ -13,8 +13,9 @@ public class TabMethods {
     }
 
     public void switchSpecificTabWindow(Integer index) {
+
         List<String> windowList = new ArrayList(this.Driver.getWindowHandles());
-        this.Driver.switchTo().window((String)windowList.get(index));
+        this.Driver.switchTo().window((String) windowList.get(index));
         System.out.println(this.Driver.getTitle());
     }
 
@@ -22,5 +23,5 @@ public class TabMethods {
         this.Driver.close();
     }
 
-    public void closeCurrentTabWindo() {this.Driver.close();}
+
 }

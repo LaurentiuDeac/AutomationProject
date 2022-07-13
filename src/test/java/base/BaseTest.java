@@ -19,7 +19,8 @@ public class BaseTest {
 
     }
     public WebDriver getDriver() {
-        return this.Driver;}
+        return this.Driver;
+    }
 
 }
 

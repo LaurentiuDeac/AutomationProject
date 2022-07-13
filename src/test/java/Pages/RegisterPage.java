@@ -59,6 +59,8 @@ public class RegisterPage extends BasePage {
     private WebElement confirmPasswElement;
     @FindBy(id="imagesrc")
     private WebElement imageElement;
+    @FindBy(xpath = "//a[text()='Frames']")
+    private WebElement framesSubmeniu;
 
 
     public void goToAlertPage(){
@@ -67,11 +69,19 @@ public class RegisterPage extends BasePage {
         pageMethods.navigateToURL("http://demo.automationtesting.in/Alerts.html");
     }
 
+    public void goToFramePage(){
+        elementMethods.hoverElement(switchToElement);
+        elementMethods.clickElement(framesSubmeniu);
+        pageMethods.navigateToURL("htto://demo.automationtesting.in/frames.html");
+    }
+
     public void goToWindowPage(){
         elementMethods.hoverElement(switchToElement);
         elementMethods.clickElement(windowSubmeniu);
         pageMethods.navigateToURL("http://demo.automationtesting.in/Windows.html");
     }
+
+
 
     public void registerValid (String firstName, String lastName, String address,
                               String phone, String email, String language,

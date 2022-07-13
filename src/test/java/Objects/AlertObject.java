@@ -1,8 +1,10 @@
 package objects;
 
+import Objects.InterfaceObject;
+
 import java.util.HashMap;
 
-public class AlertObject {
+public class AlertObject implements InterfaceObject {
     private String alertmessage;
     private String alerttext;
 
@@ -11,6 +13,7 @@ public class AlertObject {
 
     }
 
+   @Override
     public void populateObject(HashMap<String, String> inputData){
         for (String key: inputData.keySet()){
             switch (key){
@@ -24,6 +27,7 @@ public class AlertObject {
             }
         }
     }
+
 
     public String getAlertmessage() {
         return alertmessage;

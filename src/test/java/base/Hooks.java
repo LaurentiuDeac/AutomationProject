@@ -20,6 +20,5 @@ public class Hooks extends BaseTest {
 
     @After
     public void clearEnv(){
-
     }
 }

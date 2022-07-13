@@ -25,8 +25,11 @@ public class RegisterObject {
     public RegisterObject(HashMap<String, String> inputData){
         populateObject(inputData);
 
-
     }
+
+
+
+
 
     public void populateObject(HashMap<String, String> inputData){
         for (String key: inputData.keySet()){
