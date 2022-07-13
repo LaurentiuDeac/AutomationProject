@@ -29,7 +29,7 @@ public class PageMethods {
         JavascriptExecutor js= (JavascriptExecutor) Driver;
         js.executeScript("window.scrollBy(0,"+ value + ")","");
    }
-   public void waitForSpecificge(String  page){
+   public void waitForSpecificPage(String  page){
        WebDriverWait wait= new WebDriverWait(Driver, Duration.ofSeconds(10));
        wait.until(ExpectedConditions.titleIs(page));
    }

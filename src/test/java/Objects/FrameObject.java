@@ -4,14 +4,15 @@ import java.util.HashMap;
 
 public class FrameObject implements InterfaceObject {
 
-    public FrameObject(HashMap<String, String> InputData) {
+    public FrameObject(HashMap<String, String> InputData){
         populateObject(InputData);
+
 
     }
 
     private String singleiFrame;
-    private String multipleiFrame;
 
+    private String multipleiFrame;
 
     public String getSingleiFrame() {
         return singleiFrame;
@@ -21,8 +22,7 @@ public class FrameObject implements InterfaceObject {
         this.singleiFrame = singleiFrame;
     }
 
-
-    public String getMultipleiframe() {
+    public String getMultipleiFrame() {
         return multipleiFrame;
     }
 
@@ -32,17 +32,19 @@ public class FrameObject implements InterfaceObject {
 
 
     @Override
-    public void populateObject(HashMap<String, String> inputData){
-        for (String key : inputData.keySet()) {
+    public void populateObject(HashMap<String, String> inputData) {
+        for (String key: inputData.keySet()) {
             switch (key) {
-                case "singleiFrame":
+                case "singleiframe":
                     setSingleiFrame(inputData.get(key));
                     break;
-                case "multipleiFrame":
+                case "multipleiframe":
                     setMultipleiFrame(inputData.get(key));
                     break;
+
             }
         }
+
     }
 
 

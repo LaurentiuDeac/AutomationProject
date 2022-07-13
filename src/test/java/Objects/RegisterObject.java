@@ -1,8 +1,10 @@
 package objects;
 
+import Objects.InterfaceObject;
+
 import java.util.HashMap;
 
-public class RegisterObject {
+public class RegisterObject implements InterfaceObject {
 
     private String firstName;
     private String lastName;

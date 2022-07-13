@@ -16,22 +16,17 @@ public class FramePage extends BasePage{
     }
 
     @FindBy(css = ".nav-tabs>li>a")
-    private List<WebElement>FrameOption;
+    private List<WebElement> FrameOptions;
     @FindBy(css = "input[type='text']")
-    private  WebElement inputText;
-
+    private WebElement inputText;
 
     public void singleFrameProccess(FrameObject frameData){
 
-        elementMethods.waitForElement(FrameOption.get(0));
-        elementMethods.clickElement(FrameOption.get(0));
+        elementMethods.waitForElement(FrameOptions.get(0));
+        elementMethods.clickElement(FrameOptions.get(0));
         frameMethods.switchFramebyValue("singleframe");
         elementMethods.fillElement(inputText, frameData.getSingleiFrame());
         frameMethods.switchToDefaultFrame();
 
-
     }
-
-
-
 }

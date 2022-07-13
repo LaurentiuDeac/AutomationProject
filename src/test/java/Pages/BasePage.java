@@ -11,7 +11,6 @@ public class BasePage {
     public PageMethods pageMethods;
     public AlertMethods alertMethods;
     public TabMethods tabMethods;
-
     public FrameMethods frameMethods;
 
 

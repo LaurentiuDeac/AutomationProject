@@ -24,7 +24,7 @@ public class ElementMethods {
     }
 
 
-    public void fillElement(WebElement  element, String value){
+    public void fillElement(WebElement element, String value) {
         element.sendKeys(value);
 
     }
@@ -48,7 +48,7 @@ public class ElementMethods {
         Assert.assertEquals("Text message is not correct!",value,actualValue);
     }
     public void waitForElement(WebElement element){
-        WebDriverWait wait = new WebDriverWait(Driver, Duration.ofSeconds(20));
+        WebDriverWait wait = new WebDriverWait(Driver, Duration.ofSeconds(25));
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 }

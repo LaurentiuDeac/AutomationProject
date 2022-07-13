@@ -72,7 +72,7 @@ public class RegisterPage extends BasePage {
     public void goToFramePage(){
         elementMethods.hoverElement(switchToElement);
         elementMethods.clickElement(framesSubmeniu);
-        pageMethods.navigateToURL("htto://demo.automationtesting.in/frames.html");
+        pageMethods.navigateToURL("http://demo.automationtesting.in/Frames.html");
     }
 
     public void goToWindowPage(){

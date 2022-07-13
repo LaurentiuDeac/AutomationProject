@@ -1,8 +1,10 @@
 package objects;
 
+import Objects.InterfaceObject;
+
 import java.util.HashMap;
 
-public class LoginObject {
+public class LoginObject implements InterfaceObject {
 
     private String loginPage;
     private String email;

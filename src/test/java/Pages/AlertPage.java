@@ -9,6 +9,12 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 public class AlertPage extends BasePage {
+
+    public AlertPage(WebDriver driver) {
+        super(driver);
+        pageMethods.waitForSpecificPage("Alerts");
+    }
+
     @FindBy(css = ".analystic")
     private List<WebElement> alertOptions;
     @FindBy(css = "button[onclick='alertbox()']")
@@ -22,9 +28,7 @@ public class AlertPage extends BasePage {
     @FindBy(id = "demo1")
     private WebElement alertaTextMessage;
 
-    public AlertPage(WebDriver driver) {
-        super(driver);
-    }
+
 
     public void dealAlertOk() {
         this.elementMethods.clickElement((WebElement)this.alertOptions.get(0));
