@@ -18,7 +18,7 @@ public class RegisterTest extends Hooks {
                 "1234567890", "test@test.com", "English", "Australia",
                 "Java", "1990", "October", "12", "Proba123@",
                 "Proba123@",
-                "D:/Curs/testGit/AutomationFramework/src/test/resources/image.jpg");
+                "C:/Users/Owner/IdeaProjects/AutomationProject/src/test/resources/image.jpg");
 
     }
 }

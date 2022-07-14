@@ -20,6 +20,13 @@ public class FramePage extends BasePage{
     @FindBy(css = "input[type='text']")
     private WebElement inputText;
 
+    @FindBy(xpath ="//iframe[@src='MultipleFrames.html']")
+    private  WebElement multipleFrame;
+
+    @FindBy(xpath = "//iframe[@src='SingleFrame.html']")
+    private  WebElement singleFrame;
+
+
     public void singleFrameProccess(FrameObject frameData){
 
         elementMethods.waitForElement(FrameOptions.get(0));
@@ -29,4 +36,31 @@ public class FramePage extends BasePage{
         frameMethods.switchToDefaultFrame();
 
     }
+
+
+    public void multipleFrameProccess(FrameObject frameData){
+
+        elementMethods.waitForElement(FrameOptions.get(1));
+        elementMethods.clickElement(FrameOptions.get(1));
+        frameMethods.switchFramebyElement(multipleFrame);
+        frameMethods.switchFramebyElement(singleFrame);
+        elementMethods.fillElement(inputText, frameData.getMultipleiFrame());
+        frameMethods.switchToDefaultFrame();
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

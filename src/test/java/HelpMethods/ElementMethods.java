@@ -48,7 +48,7 @@ public class ElementMethods {
         Assert.assertEquals("Text message is not correct!",value,actualValue);
     }
     public void waitForElement(WebElement element){
-        WebDriverWait wait = new WebDriverWait(Driver, Duration.ofSeconds(25));
+        WebDriverWait wait = new WebDriverWait(Driver, Duration.ofSeconds(15));
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 }

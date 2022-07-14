@@ -20,6 +20,7 @@ public class FrameTest extends Hooks {
 
         FramePage framePage = new FramePage(getDriver());
         framePage.singleFrameProccess(framedata);
+        framePage.multipleFrameProccess(framedata);
     }
 
 
